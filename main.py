@@ -14,10 +14,15 @@ api = tweepy.API(auth_handler)
 
 #Keywords
 keyword = input("Please enter a keyword or hashtag:")
-
-
 nrOfTweets = input("Please enter how many tweets to analyze:")
 
+def check_int(nrOfTweets):
+    try:
+        val = int(nrOfTweets)
+    except ValueError:
+        print("nope")
+
+check_int(nrOfTweets)
 #def percentage
  #   return 100 * float(part)/float(whole)
 
