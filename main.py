@@ -1,16 +1,24 @@
-# This is a sample Python script.
+from textblob import TextBlob
+import tweepy
+import sys
 
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#Auth
+api_key = 'FMKyMEo9O9kG9nk7VHfGR1pli'
+api_key_secret = 'oNKdRioupeAJRYlH3fMUihjB8lgfYiVEyyNceHJAYKeDPtLJ9b'
+access_token = '1294624994287329280-0MlJBIGchblHVG266yiTpPTyVU2D0t'
+access_token_secret = 'zy75xUANL4w8UBqV939HrvGqMFwmy03oOn6FLcUA91OS2'
+
+auth_handler = tweepy.OAuthHandler(consumer_key=api_key, consumer_secret=api_key_secret)
+auth_handler.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth_handler)
+
+#Keywords
+keyword = input("Please enter a keyword or hashtag:")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, blüblüblüblüblüblü')  # Press Strg+F8 to toggle the breakpoint.
+nrOfTweets = input("Please enter how many tweets to analyze:")
+
+#def percentage
+ #   return 100 * float(part)/float(whole)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
