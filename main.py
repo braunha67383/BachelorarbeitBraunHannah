@@ -26,7 +26,7 @@ def check_int(nrOfTweets):
 
 check_int(nrOfTweets)
 
-tweets = tweepy.cursor(api.search_tweets, q=keyword, lang = 'en').items(nrOfTweets)
+tweets = tweepy.Cursor(api.search_tweets(q=keyword, lang = 'en' , count = nrOfTweets)#).items(nrOfTweets) #ursprüglich api.search
 
 for tweet in tweets:
    print(tweet.text)
