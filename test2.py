@@ -10,7 +10,7 @@ file_name = 'tweets.txt'
 
 columns = ['Tweet']
 data = []
-for tweet in tweepy.Paginator(client.search_recent_tweets, query=query, max_results=100).flatten(limit=100):
+for tweet in tweepy.Paginator(client.search_recent_tweets, query=query, max_results=100).flatten(limit=10000):
     data.append([tweet.text])
 
 df = pd.DataFrame(data, columns=columns)
