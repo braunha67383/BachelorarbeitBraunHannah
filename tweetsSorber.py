@@ -4,7 +4,7 @@ import pandas as pd
 
 client = tweepy.Client(bearer_token=config.bearer_token)
 
-query = '(drunk OR alcohol OR drunken) lang:de'
+query = '(-drunk, -alcohol, -drunken) lang:de'
 
 file_name = 'tweets.txt'
 
@@ -14,4 +14,4 @@ for tweet in tweepy.Paginator(client.search_recent_tweets, query=query, max_resu
     data.append([tweet.text])
 
 df = pd.DataFrame(data, columns=columns)
-df.to_csv('tweets.csv')
+df.to_csv('tweetsSorber.csv', mode='a', index=False, header=False)
