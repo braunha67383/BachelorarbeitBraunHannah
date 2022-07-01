@@ -6,7 +6,7 @@ client = tweepy.Client(bearer_token=config.bearer_token)
 
 query = '(drunk OR alcohol OR drunken) lang:de'
 
-file_name = 'tweets.txt'
+file_name = 'tweetsDrunken.csv'
 
 columns = ['Tweet']
 data = []
