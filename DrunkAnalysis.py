@@ -11,18 +11,12 @@ from sklearn.dummy import DummyClassifier
 
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('https://github.com/clairett/pytorch-sentiment-classification/raw/master/data/SST2/train.tsv',
-                 delimiter='\t', header=None)
+df = pd.read_csv('CleanedTweets.tsv', delimiter='\t', header=None)
 
-batch_1 = df[:2000]
+batch_1 = df[:6380]
 
 batch_1[1].value_counts()
 
-# For DistilBERT:
-#model_class, tokenizer_class, pretrained_weights = (
- #   ppb.DistilBertModel, ppb.DistilBertTokenizer, 'distilbert-base-uncased')
-
-## Want BERT instead of distilBERT? Uncomment the following line:
 model_class, tokenizer_class, pretrained_weights = (ppb.BertModel, ppb.BertTokenizer, 'bert-base-uncased')
 
 # Load pretrained model/tokenizer
@@ -54,19 +48,11 @@ labels = batch_1[1]
 
 train_features, test_features, train_labels, test_labels = train_test_split(features, labels)
 
-parameters = {'C': np.linspace(0.0001, 100, 20)}
-grid_search = GridSearchCV(LogisticRegression(), parameters)
-grid_search.fit(train_features, train_labels)
-
-print('best parameters: ', grid_search.best_params_)
-print('best scrores: ', grid_search.best_score_)
-
 lr_clf = LogisticRegression()
 lr_clf.fit(train_features, train_labels)
 
-lr_clf.score(test_features, test_labels)
+print(lr_clf.score(test_features, test_labels))
 
 clf = DummyClassifier()
-
 scores = cross_val_score(clf, train_features, train_labels)
 print("Dummy classifier score: %0.3f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
