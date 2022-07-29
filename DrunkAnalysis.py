@@ -11,7 +11,7 @@ from sklearn.dummy import DummyClassifier
 
 warnings.filterwarnings('ignore')
 
-df = pd.read_csv('CleanedTweets.tsv', delimiter='\t', header=None)
+df = pd.read_csv('venv/CleanedTweets.tsv', delimiter='\t', header=None)
 
 batch_1 = df[:6380]
 
