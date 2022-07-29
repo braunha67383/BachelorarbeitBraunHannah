@@ -1,8 +1,10 @@
 from spellchecker import SpellChecker
+#Aktuell nicht genutzt
+#Rechtschreibkontrolle
 
 spell = SpellChecker(language='de')
 
-misspelled = spell.unknown(["verschen"])
+misspelled = spell.unknown(["tseten"])
 
 for word in misspelled:
     print(spell._check_if_should_check(word))
