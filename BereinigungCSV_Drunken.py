@@ -6,7 +6,7 @@ import re
 
 #csv-Datei "tweetsDrunken" mit den Tweets wird geöffnet und in utf-8 umgewandelt
 #csv-Datei "CleanedTweetsDrunken" als Speicherort wird geöffnet
-in_file = open("venv/tweetsDrunken.csv", "rt", errors="ignore", encoding="utf-8")
+in_file = open("tweetsDrunken.csv", "rt", errors="ignore", encoding="utf-8")
 reader = csv.reader(in_file)
 out_file = open("CleanedTweetsDrunken.csv", "wt", errors="ignore")
 writer = csv.writer(out_file)

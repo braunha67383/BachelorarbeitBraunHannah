@@ -6,7 +6,7 @@ import re
 
 #csv-Datei "tweetsSorber" mit den Tweets wird geöffnet und in utf-8 umgewandelt
 #csv-Datei "CleanedTweetsSorber" als Speicherort wird geöffnet
-in_file = open("venv/tweetsSorber.csv", "rt", errors="ignore", encoding="utf-8")
+in_file = open("tweetsSorber.csv", "rt", errors="ignore", encoding="utf-8")
 reader = csv.reader(in_file)
 out_file = open("CleanedTweetsSorber.csv", "wt", errors="ignore")
 writer = csv.writer(out_file)
