@@ -1,4 +1,6 @@
 from spellchecker import SpellChecker
+
+#@author: Hannah Braun
 #Aktuell nicht genutzt
 #Rechtschreibkontrolle
 

@@ -3,49 +3,49 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\CleanedTweets.csv">
+        <entry key="\venv\CleanedTweets.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\CleanedTweetsDrunken.csv">
+        <entry key="\venv\CleanedTweetsDrunken.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\CleanedTweetsSorber.csv">
+        <entry key="\venv\CleanedTweetsSorber.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\TestTweets.csv">
+        <entry key="\venv\TestTweets.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\Tweets.csv">
+        <entry key="\venv\Tweets.csv">
           <value>
             <Attribute>
               <option name="separator" value=":" />
             </Attribute>
           </value>
         </entry>
-        <entry key="\tweetsDrunken.csv">
+        <entry key="\venv\tweetsDrunken.csv">
           <value>
             <Attribute>
               <option name="separator" value=":" />
             </Attribute>
           </value>
         </entry>
-        <entry key="\tweetsSorber.csv">
+        <entry key="\venv\tweetsSorber.csv">
           <value>
             <Attribute>
               <option name="separator" value=":" />

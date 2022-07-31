@@ -8,8 +8,11 @@ import torch
 import transformers as ppb
 from sklearn.dummy import DummyClassifier
 
+#@author: Hannah Braun
+#Training und Testing der AI
+
 #tsv-Datei wird geöffnet
-df = pd.read_csv('venv/CleanedTweets.tsv', delimiter='\t', header=None)
+df = pd.read_csv('CleanedTweets.tsv', delimiter='\t', header=None)
 
 #maximale Anzahl der verwendeten Daten wird festgelegt
 batch_1 = df[:20]
