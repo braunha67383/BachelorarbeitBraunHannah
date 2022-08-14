@@ -15,7 +15,7 @@ from sklearn.dummy import DummyClassifier
 df = pd.read_csv('CleanedTweets.tsv', delimiter='\t', header=None)
 
 #maximale Anzahl der verwendeten Daten wird festgelegt
-batch_1 = df[:20]
+batch_1 = df[:1000]
 print(batch_1[1].value_counts())
 
 #Vortrainiertes Model/Tokenizer wird geladen
@@ -44,14 +44,32 @@ attention_mask = torch.tensor(attention_mask)
 with torch.no_grad():
     last_hidden_states = model(input_ids, attention_mask=attention_mask)
 
+#bert.pkl befindet sich auf Google-Drive, falls der Code ausgeführt werden soll, bitte diesen herunterladen und in Project einfügen https://drive.google.com/file/d/1sGmyJUhaxRXrRtwoCFntZtidjZikVleA/view?usp=sharing
+
+#Modell speichern
+#torch.save(last_hidden_states, 'bert.pkl')
+
+#Modell laden
+#last_hidden_states = torch.load('bert.pkl')
+
+#Auswahl Daten, die weiterverarbeitet werden
 features = last_hidden_states[0][:, 0, :].numpy()
-labels = batch_1[1]
 
 #Aufteilung Training-/Testdaten
+labels = batch_1[1]
 train_features, test_features, train_labels, test_labels = train_test_split(features, labels)
 
+#Training des Modells
 lr_clf = LogisticRegression()
 lr_clf.fit(train_features, train_labels)
+
+#classifier.pkl befindet sich auf Google-Drive, falls der Code ausgeführt werden soll, bitte diesen herunterladen und in Project einfügen https://drive.google.com/file/d/1sGmyJUhaxRXrRtwoCFntZtidjZikVleA/view?usp=sharing
+
+#Modell speichern
+#torch.save(lr_clf, 'classifier.pkl')
+
+#Modell laden
+#lr_clf = torch.load('classifier.pkl')
 
 #Auswertung
 #Genauigkeit AI

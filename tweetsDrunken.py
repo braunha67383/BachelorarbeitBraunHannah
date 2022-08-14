@@ -6,16 +6,16 @@ import pandas as pd
 #Tweepy verbindet sich mit den Keys mit dem Twitteraccount
 client = tweepy.Client(bearer_token=config.bearer_token)
 
+#csv-Datei wird erstellt
+#"Tweet" als Spalte wird benannt
+file_name = 'tweetsDrunken.csv'
+columns = ['Tweet']
+data = []
+
 #Festlegung der Suchbegriffe, Deutsch als Sprache wird eingestellt
 query = '(drunk OR alcohol OR drunken) lang:de'
 
-#csv-Datei wird erstellt
-file_name = 'tweetsDrunken.csv'
-
-#"Tweet" als Spalte wird benannt
 #Tweets werden gesucht, max. Anzahl der Tweets wird festgelegt
-columns = ['Tweet']
-data = []
 for tweet in tweepy.Paginator(client.search_recent_tweets, query=query, max_results=100).flatten(limit=20000):
     data.append([tweet.text])
 

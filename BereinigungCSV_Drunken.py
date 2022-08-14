@@ -14,7 +14,7 @@ writer = csv.writer(out_file)
 #Jeder Tweet wird einzeln reihenweise aufgerufen und bereinigt
 #Gesuchte Wörter, Links, Verlinkungen anderer Personen und # werden entfernt
 for row in reader:
-        newrow= [re.sub(r"(https)\S+|(@)\S+|drunken|Drunken|DRUNKEN|Drunk|drunk|DRUNK|Alcohol|alcohol|ALCOHOL|#", "", s) for s in row]
+        newrow = [re.sub(r"(https)\S+|(@)\S+|drunken|Drunken|DRUNKEN|Drunk|drunk|DRUNK|Alcohol|alcohol|ALCOHOL|#", "", s) for s in row]
         writer.writerow(newrow)
 
 #Files werden geschlossen
